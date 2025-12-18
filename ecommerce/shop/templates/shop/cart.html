@@ -1,0 +1,15 @@
+<h2>Your Cart</h2>
+{% load static %}
+
+{% for item in cart %}
+    <div class="card">
+        <h3>{{item.name}}</h3>
+        <p>Price: ₹ {{item.price}}</p>
+    </div>
+{% empty %}
+    <p>Cart is empty</p>
+{% endfor %}
+
+<h3>Total: ₹ {{total}}</h3>
+
+<a href="{% url 'home' %}">Continue Shopping</a>
